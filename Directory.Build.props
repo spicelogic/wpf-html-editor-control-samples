@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup>
+    <!-- Change this one line to build every sample against a different .NET version.
+         The control ships binaries for all of these:
+           net48  net472  net45          (.NET Framework)
+           net8.0-windows  net9.0-windows  net10.0-windows
+           net5.0-windows  net6.0-windows  net7.0-windows
+         net8.0-windows is the default here because it is the widely installed LTS release. -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- .NET Framework targets need the reference assemblies package unless the old
+       targeting pack happens to be installed on the machine doing the build. Conditioned on
+       TargetFramework, not TargetFrameworkIdentifier: the identifier is inferred by the SDK
+       targets, which run after this file, so it is still empty here and the condition would
+       never match. -->
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
