@@ -17,7 +17,7 @@ editor already lost focus.
 **Run it**
 
 ```
-dotnet run --project 02-MvvmDataBinding
+dotnet run --project 02-MvvmDataBinding-CS
 ```
 
 A VB.NET version of this sample sits alongside in `02-MvvmDataBinding-VB`.

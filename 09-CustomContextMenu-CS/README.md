@@ -18,7 +18,7 @@ properties items check themselves when the cursor sits on that content.
 **Run it**
 
 ```
-dotnet run --project 09-CustomContextMenu
+dotnet run --project 09-CustomContextMenu-CS
 ```
 
 A VB.NET version of this same sample sits alongside in `09-CustomContextMenu-VB`.

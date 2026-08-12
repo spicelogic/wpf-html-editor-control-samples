@@ -21,7 +21,7 @@ customize further or use as a starting point for your own designs.
 **Run it**
 
 ```
-dotnet run --project 08-CustomDialog
+dotnet run --project 08-CustomDialog-CS
 ```
 
 A VB.NET version of this same sample sits alongside in `08-CustomDialog-VB`.

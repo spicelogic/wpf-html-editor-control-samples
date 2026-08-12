@@ -21,7 +21,7 @@ assemble your own from just the buttons you want, in your own order, plus a new 
 **Run it**
 
 ```
-dotnet run --project 04-ToolbarCustomization
+dotnet run --project 04-ToolbarCustomization-CS
 ```
 
 A VB.NET version of this same sample sits alongside in `04-ToolbarCustomization-VB`.

@@ -10,10 +10,10 @@ window like a normal control, including full **WPF HTML editor MVVM binding** su
 ## What this is
 
 Ten runnable WPF sample projects for the commercial SpiceLogic WPF HTML Editor control, which
-installs from NuGet. Starting with `02-MvvmDataBinding`, most samples also ship a VB.NET twin
+installs from NuGet. Starting with `02-MvvmDataBinding-CS`, most samples also ship a VB.NET twin
 in a matching `-VB` folder next to the C# original - same behavior, same comments, just VB.NET
 syntax - and every twin is already added to `WpfHtmlEditorSamples.sln`, so it builds and runs
-with no extra setup. Two samples, `03-ThemeAndAppearance` and `05-MailMergeTemplate`, are C#
+with no extra setup. Two samples, `03-ThemeAndAppearance-CS` and `05-MailMergeTemplate-CS`, are C#
 only for now. The control itself is closed source and commercial; the sample code in this
 repository is MIT licensed and free to copy into your own project.
 
@@ -49,10 +49,10 @@ runtime to install. Point them at whatever your own application uses; see
 git clone https://github.com/spicelogic/wpf-html-editor-control-samples.git
 cd wpf-html-editor-control-samples
 dotnet build WpfHtmlEditorSamples.sln
-dotnet run --project 01-Quickstart
+dotnet run --project 01-Quickstart-CS
 ```
 
-Swap `01-Quickstart` for any of the folder names below to run a different sample.
+Swap `01-Quickstart-CS` for any of the folder names below to run a different sample.
 
 ## Targeting a different .NET version
 
@@ -83,16 +83,16 @@ is C# only.
 
 | Folder | What it shows | Question it answers | VB.NET twin |
 | --- | --- | --- | --- |
-| [`01-Quickstart`](01-Quickstart) | The editor filling a window, starting content, and a live character count from `HtmlChanged` | How do I drop the editor onto a window and react to edits? | - |
-| [`02-MvvmDataBinding`](02-MvvmDataBinding) | Five windows, one per WPF binding mode against `BodyHtml` (OneWay, TwoWay/LostFocus, TwoWay/Explicit, TwoWay/PropertyChanged, and an ElementName source), plus `UpdateBindings()` | How do I bind the editor's content in MVVM, and why is my bound value stale? | [`02-MvvmDataBinding-VB`](02-MvvmDataBinding-VB) |
-| [`03-ThemeAndAppearance`](03-ThemeAndAppearance) | `EditorBorderColor`, `EditorBorderWidth`, `DefaultFontFamily`, `DefaultFontSizeInPt`, and switching `EditorMode` | How do I match my app's theme and toggle design/source view? | - |
-| [`04-ToolbarCustomization`](04-ToolbarCustomization) | Hiding, re-skinning, and re-wiring built-in toolbar buttons at startup, plus hand-assembling a fully custom toolbar from scratch on demand | How do I add my own button to the toolbar, or replace it entirely? | [`04-ToolbarCustomization-VB`](04-ToolbarCustomization-VB) |
-| [`05-MailMergeTemplate`](05-MailMergeTemplate) | Registering `PlaceholderField`s, the built-in placeholder toolbar, and a merge preview | How do I let end users build their own mail-merge templates? | - |
-| [`06-Localization`](06-Localization) | Switching `Language` at runtime, an independent spell-check dictionary language, and a JSON override file for individual strings | How do I localize the editor's UI, and override a handful of its built-in strings? | [`06-Localization-VB`](06-Localization-VB) |
-| [`07-CustomSpellChecker`](07-CustomSpellChecker) | Plugging in a custom `ISpellCheckerEngine` (a demo engine flags any word starting with "a"), toggled against the built-in engine | How do I use my own dictionary or spell-checking engine instead of the built-in one? | [`07-CustomSpellChecker-VB`](07-CustomSpellChecker-VB) |
-| [`08-CustomDialog`](08-CustomDialog) | Replacing every built-in editor dialog (image, hyperlink, table, table cell, symbol, search, spell checker, style builder, YouTube insert, color picker) with your own WPF window | How do I make the editor's dialogs match my application's own look and feel? | [`08-CustomDialog-VB`](08-CustomDialog-VB) |
-| [`09-CustomContextMenu`](09-CustomContextMenu) | Replacing the built-in right-click menu with a custom `ContextMenu` kept in sync with live editor state (`StateQuery`) via the `ContextMenuShowing` event | How do I build my own right-click menu that still reflects what the user clicked on? | [`09-CustomContextMenu-VB`](09-CustomContextMenu-VB) |
-| [`10-FullEditorDemo`](10-FullEditorDemo) | The complete default toolbar, rich starting content, a live character count, and inline spell checking with a language switcher | What does the editor look like fully set up, out of the box? | [`10-FullEditorDemo-VB`](10-FullEditorDemo-VB) |
+| [`01-Quickstart-CS`](01-Quickstart-CS) | The editor filling a window, starting content, and a live character count from `HtmlChanged` | How do I drop the editor onto a window and react to edits? | - |
+| [`02-MvvmDataBinding-CS`](02-MvvmDataBinding-CS) | Five windows, one per WPF binding mode against `BodyHtml` (OneWay, TwoWay/LostFocus, TwoWay/Explicit, TwoWay/PropertyChanged, and an ElementName source), plus `UpdateBindings()` | How do I bind the editor's content in MVVM, and why is my bound value stale? | [`02-MvvmDataBinding-VB`](02-MvvmDataBinding-VB) |
+| [`03-ThemeAndAppearance-CS`](03-ThemeAndAppearance-CS) | `EditorBorderColor`, `EditorBorderWidth`, `DefaultFontFamily`, `DefaultFontSizeInPt`, and switching `EditorMode` | How do I match my app's theme and toggle design/source view? | - |
+| [`04-ToolbarCustomization-CS`](04-ToolbarCustomization-CS) | Hiding, re-skinning, and re-wiring built-in toolbar buttons at startup, plus hand-assembling a fully custom toolbar from scratch on demand | How do I add my own button to the toolbar, or replace it entirely? | [`04-ToolbarCustomization-VB`](04-ToolbarCustomization-VB) |
+| [`05-MailMergeTemplate-CS`](05-MailMergeTemplate-CS) | Registering `PlaceholderField`s, the built-in placeholder toolbar, and a merge preview | How do I let end users build their own mail-merge templates? | - |
+| [`06-Localization-CS`](06-Localization-CS) | Switching `Language` at runtime, an independent spell-check dictionary language, and a JSON override file for individual strings | How do I localize the editor's UI, and override a handful of its built-in strings? | [`06-Localization-VB`](06-Localization-VB) |
+| [`07-CustomSpellChecker-CS`](07-CustomSpellChecker-CS) | Plugging in a custom `ISpellCheckerEngine` (a demo engine flags any word starting with "a"), toggled against the built-in engine | How do I use my own dictionary or spell-checking engine instead of the built-in one? | [`07-CustomSpellChecker-VB`](07-CustomSpellChecker-VB) |
+| [`08-CustomDialog-CS`](08-CustomDialog-CS) | Replacing every built-in editor dialog (image, hyperlink, table, table cell, symbol, search, spell checker, style builder, YouTube insert, color picker) with your own WPF window | How do I make the editor's dialogs match my application's own look and feel? | [`08-CustomDialog-VB`](08-CustomDialog-VB) |
+| [`09-CustomContextMenu-CS`](09-CustomContextMenu-CS) | Replacing the built-in right-click menu with a custom `ContextMenu` kept in sync with live editor state (`StateQuery`) via the `ContextMenuShowing` event | How do I build my own right-click menu that still reflects what the user clicked on? | [`09-CustomContextMenu-VB`](09-CustomContextMenu-VB) |
+| [`10-FullEditorDemo-CS`](10-FullEditorDemo-CS) | The complete default toolbar, rich starting content, a live character count, and inline spell checking with a language switcher | What does the editor look like fully set up, out of the box? | [`10-FullEditorDemo-VB`](10-FullEditorDemo-VB) |
 
 ## Quickstart code
 
@@ -121,7 +121,7 @@ move focus), the view model can be behind the user's last few keystrokes.
 Call `editor.UpdateBindings()` before reading `BodyHtml` or `DocumentHtml` from a bound view
 model. It pushes the editor's current content into its dependency properties right now, which in
 turn flows into your bound property. This is the single most common support question we get about
-this control, and the [`02-MvvmDataBinding`](02-MvvmDataBinding) sample builds around exactly this
+this control, and the [`02-MvvmDataBinding-CS`](02-MvvmDataBinding-CS) sample builds around exactly this
 pattern.
 
 ## What the control does

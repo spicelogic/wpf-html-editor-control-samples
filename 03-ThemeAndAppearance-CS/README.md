@@ -12,7 +12,7 @@ document font, and switch `EditorMode` between the design (WYSIWYG) and source (
 **Run it**
 
 ```
-dotnet run --project 03-ThemeAndAppearance
+dotnet run --project 03-ThemeAndAppearance-CS
 ```
 
 A VB.NET version of this sample sits alongside in `03-ThemeAndAppearance-VB`.

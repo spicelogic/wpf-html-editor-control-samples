@@ -23,7 +23,7 @@ app.
 **Run it**
 
 ```
-dotnet run --project 06-Localization
+dotnet run --project 06-Localization-CS
 ```
 
 Pick a language from the dropdown to see the toolbar, context menu, and dialogs relocalize. Pick

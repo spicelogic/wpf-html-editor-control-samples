@@ -18,7 +18,7 @@ which flags any word starting with "a" as misspelled and offers two canned sugge
 **Run it**
 
 ```
-dotnet run --project 07-CustomSpellChecker
+dotnet run --project 07-CustomSpellChecker-CS
 ```
 
 A VB.NET version of this same sample sits alongside it in `07-CustomSpellChecker-VB`.
