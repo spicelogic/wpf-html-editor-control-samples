@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CustomSpellChecker</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="underline.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="underline.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="*" />
+  </ItemGroup>
+
+</Project>

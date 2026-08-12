@@ -1,0 +1,133 @@
+﻿<Window
+    x:Class="CustomDialog.Dialogs.TableCellPropertiesDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:SpiceLogic.HtmlEditor.WPF.Controls;assembly=SpiceLogic.HtmlEditor.WPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ignore="http://www.ignore.com"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="1"
+    Height="1"
+    MinWidth="950"
+    MinHeight="395"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    ResizeMode="CanResizeWithGrip"
+    WindowStartupLocation="CenterOwner"
+    WindowStyle="None"
+    d:DesignHeight="490"
+    d:DesignWidth="747"
+    mc:Ignorable="d ignore">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SpiceLogic.HtmlEditor.WPF;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:DialogHeader Title="Custom Dialog : Table Cell Properties" Grid.Row="0" Panel.ZIndex="1" MouseLeftButtonDown="DialogHeader_MouseLeftButtonDown" />
+        <controls:PropertyPanel Grid.Row="1" />
+        <StackPanel Grid.Row="1">
+            <controls:PropertyBlock Title="Dimensions">
+                <controls:PropertyBlock.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" MinWidth="80" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" MinWidth="80" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="ChkWidth" HorizontalAlignment="Left" Content="Set Width" Checked="chkWidth_CheckedChanged" Unchecked="chkWidth_CheckedChanged"/>
+                        <TextBox x:Name="TxtWidth" IsEnabled="False" Grid.Column="1" Margin="5,0"></TextBox>
+                        <ComboBox x:Name="CmbWidthUnit" Grid.Column="2" Margin="5,0" IsEnabled="False" MinWidth="60" IsEditable="True" Padding="0">
+                            <ComboBoxItem>px</ComboBoxItem>
+                            <ComboBoxItem>%</ComboBoxItem>
+                        </ComboBox>
+                        <CheckBox x:Name="ChkHeight" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Left" Content="Set Height" Checked="chkHeight_CheckedChanged" Unchecked="chkHeight_CheckedChanged"/>
+                        <TextBox x:Name="TxtHeight" Grid.Column="4" Margin="5,0" IsEnabled="False"></TextBox>
+                        <ComboBox x:Name="CmbHeightUnit" Grid.Column="5" Margin="5,0,0,0" IsEnabled="False" MinWidth="60" IsEditable="True" Padding="0">
+                            <ComboBoxItem>px</ComboBoxItem>
+                            <ComboBoxItem>%</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+            <controls:PropertyBlock>
+                <controls:PropertyBlock.Title>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Right" Text="Horizontal" />
+                        <TextBlock HorizontalAlignment="Right" Text="Alignment" />
+                    </StackPanel>
+                </controls:PropertyBlock.Title>
+                <controls:PropertyBlock.Content>
+                    <ComboBox x:Name="CmbHorizontalAlign" IsEditable="True" Padding="0">
+                        <ComboBoxItem>NotSet</ComboBoxItem>
+                        <ComboBoxItem>right</ComboBoxItem>
+                        <ComboBoxItem>center</ComboBoxItem>
+                        <ComboBoxItem>left</ComboBoxItem>
+                        <ComboBoxItem>middle</ComboBoxItem>
+                    </ComboBox>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+            <controls:PropertyBlock>
+                <controls:PropertyBlock.Title>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Right" Text="Vertical" />
+                        <TextBlock HorizontalAlignment="Right" Text="Alignment" />
+                    </StackPanel>
+                </controls:PropertyBlock.Title>
+                <controls:PropertyBlock.Content>
+                    <ComboBox x:Name="CmbVerticalAlign" IsEditable="True" Padding="0">
+                        <ComboBoxItem>NotSet</ComboBoxItem>
+                        <ComboBoxItem>top</ComboBoxItem>
+                        <ComboBoxItem>middle</ComboBoxItem>
+                        <ComboBoxItem>bottom</ComboBoxItem>
+                        <ComboBoxItem>baseline</ComboBoxItem>
+                    </ComboBox>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+            <controls:PropertyBlock Title="Background" IsSeparatorVisible="True" TitleOffset="0,-26,25,0">
+                <controls:PropertyBlock.Content>
+                    <Grid Height="Auto">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="ChkNoWrap" HorizontalAlignment="Left" VerticalAlignment="Top" Content="No wrap" />
+                        <CheckBox x:Name="ChkBgColor" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="chkBgColor_OnCheckedChanged" Unchecked="chkBgColor_OnCheckedChanged">
+                        </CheckBox>
+                        <controls:HyperlinkButton Grid.Row="0" Grid.Column="2" x:Name="LnkBtnBgColor" VerticalContentAlignment="Center" Text="Background Color" Click="lnkBtnBgColor_Click" IsEnabled="False"/>
+                        <TextBox x:Name="TxtBgColor" Grid.Row="0" Grid.Column="3" MinWidth="100" Margin="5,0" IsReadOnly="True"></TextBox>
+                        <CheckBox x:Name="ChkOverrideSettings4Cells" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Override settings to all cells" />
+                    </Grid>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+
+            <controls:PropertyBlock Title="Class name">
+                <controls:PropertyBlock.Content>
+                    <TextBox x:Name="TxtClassName"/>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+            <controls:PropertyBlock Title="CSS" IsSeparatorVisible="False">
+                <controls:PropertyBlock.Content>
+                    <TextBox x:Name="TxtCss"/>
+                </controls:PropertyBlock.Content>
+            </controls:PropertyBlock>
+        </StackPanel>
+        <controls:TwoButtonPanel Grid.Row="2" OnLeftButtonClicked="TwoButtonPanel_OnLeftButtonClicked" OnRightButtonClicked="TwoButtonPanel_OnRightButtonClicked" />
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace></RootNamespace>
+    <StartupObject>LocalizationVB.Program</StartupObject>
+  </PropertyGroup>
+
+  <!-- App.xaml carries no x:Class (see App.xaml.vb) - the SDK must not treat it as the
+       ApplicationDefinition, or it emits the same IComponentConnector codegen this works around. -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="SpiceLogic.HtmlEditor.Localization\**\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="underline.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

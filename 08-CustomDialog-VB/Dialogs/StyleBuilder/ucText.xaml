@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="CustomDialog.Dialogs.StyleBuilder.ucText"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="445" d:DesignWidth="504"
+             Loaded="ucText_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SpiceLogic.HtmlEditor.WPF;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Margin="20,10,10,10">
+        <TextBlock FontWeight="Bold" Text="Alignment" />
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="18" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Horizontal" TextWrapping="Wrap" />
+            <ComboBox x:Name="CbAlHorizontal" Grid.Row="0" Grid.Column="2" Margin="0,-0.001,0,0" SelectionChanged="cbAlHorizontal_SelectionChanged"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Vertical" TextWrapping="Wrap" />
+            <ComboBox x:Name="CbAlVertical" Grid.Row="2" Grid.Column="2" />
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ThinTextBlockStyle}" Text="Justification" TextWrapping="Wrap">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2" />
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <ComboBox x:Name="CbAlJustification" Grid.Row="4" Grid.Column="2" RenderTransformOrigin="0.5,0.5" />
+        </Grid>
+        <Border Height="1" Margin="0,10" Background="{DynamicResource PropertyBlockSeparatorBrush}" />
+        <TextBlock FontWeight="Bold" Text="Text Flow" />
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Letters" />
+            <ComboBox x:Name="CbSpacingLetters" Grid.Row="0" Grid.Column="1" Margin="5,0" SelectionChanged="cbSpacingLetters_SelectionChanged"/>
+            <Grid Grid.Row="0" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TbSpacingLetters" Grid.Column="0" Margin="5,0" />
+                <ComboBox x:Name="CbSpacingLettersCustom" Grid.Row="0" Grid.Column="2">
+                    <ComboBoxItem>px</ComboBoxItem>
+                    <ComboBoxItem>%</ComboBoxItem>
+                    <ComboBoxItem>pt</ComboBoxItem>
+                    <ComboBoxItem>pc</ComboBoxItem>
+                    <ComboBoxItem>mm</ComboBoxItem>
+                    <ComboBoxItem>cm</ComboBoxItem>
+                    <ComboBoxItem>in</ComboBoxItem>
+                    <ComboBoxItem>em</ComboBoxItem>
+                    <ComboBoxItem>ex</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Lines" />
+            <ComboBox x:Name="CbSpacingLines" Grid.Row="2" Grid.Column="1" Margin="5,0" SelectionChanged="cbSpacingLines_SelectionChanged"/>
+            <Grid Grid.Row="2" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TbSpacingLines" Grid.Column="0" Margin="5,0" />
+                <ComboBox x:Name="CbSpacingLinesCustom" Grid.Row="0" Grid.Column="2">
+                    <ComboBoxItem>px</ComboBoxItem>
+                    <ComboBoxItem>%</ComboBoxItem>
+                    <ComboBoxItem>pt</ComboBoxItem>
+                    <ComboBoxItem>pc</ComboBoxItem>
+                    <ComboBoxItem>mm</ComboBoxItem>
+                    <ComboBoxItem>cm</ComboBoxItem>
+                    <ComboBoxItem>in</ComboBoxItem>
+                    <ComboBoxItem>em</ComboBoxItem>
+                    <ComboBoxItem>ex</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Border Height="1" Margin="0,10" Background="{DynamicResource PropertyBlockSeparatorBrush}" />
+        <TextBlock FontWeight="Bold" Text="Spacing Between" />
+        <Grid Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="0,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Identation" TextWrapping="Wrap" />
+            <TextBox x:Name="TbTextFlowIndentation" Grid.Row="0" Grid.Column="1" Margin="10,0" TextWrapping="Wrap" />
+            <ComboBox x:Name="CbTextFlowCustom" Grid.Row="0" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                <ComboBoxItem>px</ComboBoxItem>
+                <ComboBoxItem>%</ComboBoxItem>
+                <ComboBoxItem>pt</ComboBoxItem>
+                <ComboBoxItem>pc</ComboBoxItem>
+                <ComboBoxItem>mm</ComboBoxItem>
+                <ComboBoxItem>cm</ComboBoxItem>
+                <ComboBoxItem>in</ComboBoxItem>
+                <ComboBoxItem>em</ComboBoxItem>
+                <ComboBoxItem>ex</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ThinTextBlockStyle}" Text="Text direction" TextWrapping="Wrap" />
+            <ComboBox x:Name="CbTextFlowDirection" Grid.Row="2" Grid.Column="1" Margin="10,0" RenderTransformOrigin="0.5,0.5" />
+        </Grid>
+    </StackPanel>
+</UserControl>
