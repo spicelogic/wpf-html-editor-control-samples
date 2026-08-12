@@ -5,8 +5,10 @@
            net48  net472  net45          (.NET Framework)
            net8.0-windows  net9.0-windows  net10.0-windows
            net5.0-windows  net6.0-windows  net7.0-windows
-         net8.0-windows is the default here because it is the widely installed LTS release. -->
-    <TargetFramework>net8.0-windows</TargetFramework>
+         net48 is the default because .NET Framework 4.8 is part of Windows 10 (1903 and
+         later) and Windows 11, so these samples run on a stock Windows machine with nothing
+         installed. Point it at a modern target the moment your own application uses one. -->
+    <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>

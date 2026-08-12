@@ -39,7 +39,9 @@ Linux), and the .NET SDK for whichever target framework you build against.
 
 The **control** itself supports .NET Framework 4.5, 4.7.2 and 4.8, and .NET 5 through .NET 10, all
 on Windows - including .NET Framework 4.8, which is still the standard on most corporate desktops.
-The samples in this repository are checked in targeting `net8.0-windows` purely as a default; see
+The samples in this repository are checked in targeting `net48`, because .NET Framework 4.8 is
+part of Windows 10 (1903 and later) and Windows 11, so they run on a stock Windows machine with no
+runtime to install. Point them at whatever your own application uses; see
 [Targeting a different .NET version](#targeting-a-different-net-version) below to point them at
 .NET Framework 4.8 or any other supported target with a one-line edit.
 
@@ -64,8 +66,8 @@ Valid values, all shipped in the `SpiceLogic.HtmlEditor.WPF` NuGet package:
 | --- | --- |
 | `net45` | `net5.0-windows` |
 | `net472` | `net6.0-windows` |
-| `net48` (includes .NET Framework 4.8) | `net7.0-windows` |
-| | `net8.0-windows` (default here) |
+| `net48` (the default here) | `net7.0-windows` |
+| | `net8.0-windows` |
 | | `net9.0-windows` |
 | | `net10.0-windows` |
 

@@ -14,3 +14,5 @@ document font, and switch `EditorMode` between the design (WYSIWYG) and source (
 ```
 dotnet run --project 03-ThemeAndAppearance
 ```
+
+A VB.NET version of this sample sits alongside in `03-ThemeAndAppearance-VB`.

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<!-- RootNamespace intentionally empty so the VB WPF code-gen and the
+		     user code (Namespace Global.MailMergeTemplate) merge cleanly with the
+		     XAML x:Class values (MailMergeTemplate.App / MailMergeTemplate.MainWindow),
+		     which are kept identical to the C# sibling project. -->
+		<RootNamespace></RootNamespace>
+		<OptionExplicit>On</OptionExplicit>
+		<OptionStrict>On</OptionStrict>
+		<OptionInfer>On</OptionInfer>
+		<StartupObject>MailMergeTemplate.Program</StartupObject>
+	</PropertyGroup>
+
+	<!-- App.xaml carries no x:Class and is compiled as a Page (not
+	     ApplicationDefinition) to sidestep PresentationBuildTasks' BC30149 /
+	     BC30420 codegen bug with VB classes that derive from
+	     System.Windows.Application. The Application is bootstrapped from the
+	     manual Sub Main in App.xaml.vb instead. -->
+	<ItemGroup>
+		<ApplicationDefinition Remove="App.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="*" />
+	</ItemGroup>
+
+</Project>
