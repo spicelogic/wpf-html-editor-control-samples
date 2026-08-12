@@ -17,5 +17,3 @@ in-memory sample record and renders the result in a second, read-only editor.
 ```
 dotnet run --project 05-MailMergeTemplate
 ```
-
-A VB.NET version of this sample sits alongside in `05-MailMergeTemplate-VB`.
