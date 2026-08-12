@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="3.5.7" />
+    <PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="*" />
   </ItemGroup>
 
 </Project>

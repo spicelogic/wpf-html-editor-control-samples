@@ -25,7 +25,8 @@ or, from the Package Manager Console:
 PM> Install-Package SpiceLogic.HtmlEditor.WPF
 ```
 
-These samples target package version `3.5.7`.
+The sample projects reference the package as `Version="*"`, so a restore always pulls the
+latest published release and you are never evaluating an old build.
 
 ## Run the samples
 
