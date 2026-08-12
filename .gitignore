@@ -43,3 +43,7 @@ _ReSharper*/
 # OS files
 .DS_Store
 Thumbs.db
+
+# WPF build leaves these temporary project files behind; they are never source.
+*_wpftmp.csproj
+*_wpftmp.vbproj

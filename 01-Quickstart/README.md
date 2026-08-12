@@ -14,3 +14,5 @@ code-behind, and a status bar character count driven by the `HtmlChanged` event.
 ```
 dotnet run --project 01-Quickstart
 ```
+
+A VB.NET version of this same sample sits alongside in `01-Quickstart-VB`.

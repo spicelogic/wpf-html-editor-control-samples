@@ -1,4 +1,4 @@
-# WPF HTML editor control - C# sample projects
+# WPF HTML editor control - C# and VB.NET sample projects
 
 A **WPF HTML editor control** for building a rich text editing experience inside a .NET desktop
 application. If you are looking for a **C# WPF rich text editor** that behaves like a real **WPF
@@ -9,9 +9,13 @@ window like a normal control, including full **WPF HTML editor MVVM binding** su
 
 ## What this is
 
-These are runnable C# WPF sample projects for the commercial SpiceLogic WPF HTML Editor control,
-which installs from NuGet. The control itself is closed source and commercial; the sample code in
-this repository is MIT licensed and free to copy into your own project.
+Ten runnable WPF sample projects for the commercial SpiceLogic WPF HTML Editor control, which
+installs from NuGet. Starting with `02-MvvmDataBinding`, most samples also ship a VB.NET twin
+in a matching `-VB` folder next to the C# original - same behavior, same comments, just VB.NET
+syntax - and every twin is already added to `WpfHtmlEditorSamples.sln`, so it builds and runs
+with no extra setup. Two samples, `03-ThemeAndAppearance` and `05-MailMergeTemplate`, are C#
+only for now. The control itself is closed source and commercial; the sample code in this
+repository is MIT licensed and free to copy into your own project.
 
 ## Install
 
@@ -35,7 +39,9 @@ Linux), and the .NET SDK for whichever target framework you build against.
 
 The **control** itself supports .NET Framework 4.5, 4.7.2 and 4.8, and .NET 5 through .NET 10, all
 on Windows - including .NET Framework 4.8, which is still the standard on most corporate desktops.
-The samples in this repository are checked in targeting `net8.0-windows` purely as a default; see
+The samples in this repository are checked in targeting `net48`, because .NET Framework 4.8 is
+part of Windows 10 (1903 and later) and Windows 11, so they run on a stock Windows machine with no
+runtime to install. Point them at whatever your own application uses; see
 [Targeting a different .NET version](#targeting-a-different-net-version) below to point them at
 .NET Framework 4.8 or any other supported target with a one-line edit.
 
@@ -60,8 +66,8 @@ Valid values, all shipped in the `SpiceLogic.HtmlEditor.WPF` NuGet package:
 | --- | --- |
 | `net45` | `net5.0-windows` |
 | `net472` | `net6.0-windows` |
-| `net48` (includes .NET Framework 4.8) | `net7.0-windows` |
-| | `net8.0-windows` (default here) |
+| `net48` (the default here) | `net7.0-windows` |
+| | `net8.0-windows` |
 | | `net9.0-windows` |
 | | `net10.0-windows` |
 
@@ -72,13 +78,21 @@ Valid values, all shipped in the `SpiceLogic.HtmlEditor.WPF` NuGet package:
 
 ## Samples
 
-| Folder | What it shows | Question it answers |
-| --- | --- | --- |
-| [`01-Quickstart`](01-Quickstart) | The editor filling a window, starting content, and a live character count from `HtmlChanged` | How do I drop the editor onto a window and react to edits? |
-| [`02-MvvmDataBinding`](02-MvvmDataBinding) | Two-way `BodyHtml` binding to an `INotifyPropertyChanged` view model, plus `UpdateBindings()` | How do I bind the editor's content in MVVM, and why is my bound value stale? |
-| [`03-ThemeAndAppearance`](03-ThemeAndAppearance) | `EditorBorderColor`, `EditorBorderWidth`, `DefaultFontFamily`, `DefaultFontSizeInPt`, and switching `EditorMode` | How do I match my app's theme and toggle design/source view? |
-| [`04-ToolbarCustomization`](04-ToolbarCustomization) | Adding a custom button to `Toolbar2Items` that inserts HTML at the caret | How do I add my own button to the toolbar? |
-| [`05-MailMergeTemplate`](05-MailMergeTemplate) | Registering `PlaceholderField`s, the built-in placeholder toolbar, and a merge preview | How do I let end users build their own mail-merge templates? |
+The "VB.NET twin" column links the matching `-VB` folder where one exists; "-" means that sample
+is C# only.
+
+| Folder | What it shows | Question it answers | VB.NET twin |
+| --- | --- | --- | --- |
+| [`01-Quickstart`](01-Quickstart) | The editor filling a window, starting content, and a live character count from `HtmlChanged` | How do I drop the editor onto a window and react to edits? | - |
+| [`02-MvvmDataBinding`](02-MvvmDataBinding) | Five windows, one per WPF binding mode against `BodyHtml` (OneWay, TwoWay/LostFocus, TwoWay/Explicit, TwoWay/PropertyChanged, and an ElementName source), plus `UpdateBindings()` | How do I bind the editor's content in MVVM, and why is my bound value stale? | [`02-MvvmDataBinding-VB`](02-MvvmDataBinding-VB) |
+| [`03-ThemeAndAppearance`](03-ThemeAndAppearance) | `EditorBorderColor`, `EditorBorderWidth`, `DefaultFontFamily`, `DefaultFontSizeInPt`, and switching `EditorMode` | How do I match my app's theme and toggle design/source view? | - |
+| [`04-ToolbarCustomization`](04-ToolbarCustomization) | Hiding, re-skinning, and re-wiring built-in toolbar buttons at startup, plus hand-assembling a fully custom toolbar from scratch on demand | How do I add my own button to the toolbar, or replace it entirely? | [`04-ToolbarCustomization-VB`](04-ToolbarCustomization-VB) |
+| [`05-MailMergeTemplate`](05-MailMergeTemplate) | Registering `PlaceholderField`s, the built-in placeholder toolbar, and a merge preview | How do I let end users build their own mail-merge templates? | - |
+| [`06-Localization`](06-Localization) | Switching `Language` at runtime, an independent spell-check dictionary language, and a JSON override file for individual strings | How do I localize the editor's UI, and override a handful of its built-in strings? | [`06-Localization-VB`](06-Localization-VB) |
+| [`07-CustomSpellChecker`](07-CustomSpellChecker) | Plugging in a custom `ISpellCheckerEngine` (a demo engine flags any word starting with "a"), toggled against the built-in engine | How do I use my own dictionary or spell-checking engine instead of the built-in one? | [`07-CustomSpellChecker-VB`](07-CustomSpellChecker-VB) |
+| [`08-CustomDialog`](08-CustomDialog) | Replacing every built-in editor dialog (image, hyperlink, table, table cell, symbol, search, spell checker, style builder, YouTube insert, color picker) with your own WPF window | How do I make the editor's dialogs match my application's own look and feel? | [`08-CustomDialog-VB`](08-CustomDialog-VB) |
+| [`09-CustomContextMenu`](09-CustomContextMenu) | Replacing the built-in right-click menu with a custom `ContextMenu` kept in sync with live editor state (`StateQuery`) via the `ContextMenuShowing` event | How do I build my own right-click menu that still reflects what the user clicked on? | [`09-CustomContextMenu-VB`](09-CustomContextMenu-VB) |
+| [`10-FullEditorDemo`](10-FullEditorDemo) | The complete default toolbar, rich starting content, a live character count, and inline spell checking with a language switcher | What does the editor look like fully set up, out of the box? | [`10-FullEditorDemo-VB`](10-FullEditorDemo-VB) |
 
 ## Quickstart code
 
