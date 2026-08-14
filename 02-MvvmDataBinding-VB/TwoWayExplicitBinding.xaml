@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:se="clr-namespace:SpiceLogic.HtmlEditor.WPF;assembly=SpiceLogic.HtmlEditor.WPF"
         xmlns:viewModel="clr-namespace:MvvmDataBinding.ViewModel"
-        Title="TwoWay binding - Explicit trigger" Height="560" Width="920">
+        Title="TwoWay binding - Explicit trigger" Height="560" Width="1000">
     <Window.DataContext>
         <viewModel:EmailViewModel/>
     </Window.DataContext>

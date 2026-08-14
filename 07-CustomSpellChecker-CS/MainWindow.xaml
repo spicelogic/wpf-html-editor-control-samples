@@ -5,7 +5,7 @@
         xmlns:userOptions="clr-namespace:SpiceLogic.HtmlEditor.WPF.Models.BOs.UserOptions;assembly=SpiceLogic.HtmlEditor.WPF"
         xmlns:designTime="clr-namespace:SpiceLogic.HtmlEditor.Abstractions.DesignTime;assembly=SpiceLogic.HtmlEditor.Abstractions"
         x:Class="CustomSpellChecker.MainWindow"
-        Title="WPF HTML editor control - custom spell checker engine" Height="650" Width="950" Loaded="MainWindow_OnLoaded">
+        Title="WPF HTML editor control - custom spell checker engine" Height="650" Width="1000" Loaded="MainWindow_OnLoaded">
     <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
