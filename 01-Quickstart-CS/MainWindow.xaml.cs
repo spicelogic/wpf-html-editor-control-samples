@@ -35,32 +35,34 @@ public partial class MainWindow : Window
     private const string DocumentStyleElementId = "quickstart_document_style";
 
     /// <summary>
-    /// The document stylesheet. The table carries a fixed width rather than 100% because a
-    /// percentage width is resolved against the viewport, which leaves the document a few
+    /// The document stylesheet. It sets no absolute font size: the text keeps the editor's
+    /// own default size and everything else is expressed in em, so the document reads at the
+    /// same scale as the rest of the application. The table is deliberately not width:100% -
+    /// a percentage width is resolved against the viewport, which leaves the document a few
     /// pixels wider than the visible area once the vertical scrollbar appears.
     /// </summary>
     private const string DocumentStyle = """
-        body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.7; color: #1f2933; margin: 28px 34px; }
-        h1 { font-size: 34px; font-weight: 600; color: #0f2540; margin: 0 0 4px 0; }
-        h2 { font-size: 22px; font-weight: 600; color: #0f2540; margin: 30px 0 12px 0; padding-bottom: 7px; border-bottom: 1px solid #e2e8f0; }
-        p { margin: 0 0 14px 0; }
+        body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1f2933; margin: 24px 30px; }
+        h1 { font-size: 2em; font-weight: 600; color: #0f2540; margin: 0 0 4px 0; }
+        h2 { font-size: 1.3em; font-weight: 600; color: #0f2540; margin: 26px 0 10px 0; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0; }
+        p { margin: 0 0 12px 0; }
         a { color: #1a6fd4; text-decoration: none; border-bottom: 1px solid #bcd6f5; }
-        ul { margin: 0 0 16px 0; padding-left: 22px; }
-        li { margin-bottom: 8px; }
-        .eyebrow { font-size: 13px; font-weight: 600; color: #1a6fd4; letter-spacing: 1.3px; margin: 0 0 6px 0; }
-        .lede { font-size: 19px; color: #52606d; margin: 0 0 24px 0; }
-        .callout { background-color: #f2f7fd; border-left: 4px solid #1a6fd4; padding: 15px 20px; margin: 0 0 24px 0; }
+        ul { margin: 0 0 14px 0; padding-left: 22px; }
+        li { margin-bottom: 7px; }
+        .eyebrow { font-size: 0.75em; font-weight: 600; color: #1a6fd4; letter-spacing: 1.2px; margin: 0 0 6px 0; }
+        .lede { font-size: 1.1em; color: #52606d; margin: 0 0 22px 0; }
+        .callout { background-color: #f2f7fd; border-left: 4px solid #1a6fd4; padding: 14px 18px; margin: 0 0 22px 0; }
         .callout p { margin: 0; }
-        table { border-collapse: collapse; width: 890px; margin: 4px 0 20px 0; font-size: 16px; }
-        th { background-color: #0f2540; color: #ffffff; text-align: left; font-weight: 600; padding: 11px 15px; }
-        td { border-bottom: 1px solid #e2e8f0; padding: 11px 15px; }
+        table { border-collapse: collapse; margin: 4px 0 18px 0; }
+        th { background-color: #0f2540; color: #ffffff; text-align: left; font-weight: 600; padding: 10px 16px; }
+        td { border-bottom: 1px solid #e2e8f0; padding: 10px 16px; }
         tr.alt td { background-color: #f7f9fc; }
-        .badge { display: inline-block; padding: 3px 11px; font-size: 13px; font-weight: 600; border-radius: 11px; }
+        .badge { display: inline-block; padding: 2px 10px; font-size: 0.85em; font-weight: 600; border-radius: 10px; }
         .badge-live { background-color: #dff3e4; color: #1b6b3a; }
         .badge-review { background-color: #fdf0d5; color: #8a5a00; }
         .badge-planned { background-color: #eceff3; color: #52606d; }
-        blockquote { margin: 0 0 16px 0; padding: 2px 0 2px 20px; border-left: 3px solid #cfd8e3; color: #52606d; font-style: italic; }
-        .muted { color: #7b8794; font-size: 14px; }
+        blockquote { margin: 0 0 14px 0; padding: 2px 0 2px 18px; border-left: 3px solid #cfd8e3; color: #52606d; font-style: italic; }
+        .muted { color: #7b8794; font-size: 0.85em; }
         """;
 
     private const string StarterDocumentHtml = """

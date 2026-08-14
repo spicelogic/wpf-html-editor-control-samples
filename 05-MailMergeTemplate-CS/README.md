@@ -19,3 +19,14 @@ dotnet run --project 05-MailMergeTemplate-CS
 ```
 
 A VB.NET version of this sample sits alongside in `05-MailMergeTemplate-VB`.
+
+## Building this with an AI assistant?
+
+> [!TIP]
+> Point your assistant at our MCP server and it can read the real API for this
+> control instead of guessing at member names:
+> `https://mcp.spicelogic.com/html-editor/wpf`
+>
+> ```bash
+> claude mcp add --transport http spicelogic-wpf https://mcp.spicelogic.com/html-editor/wpf
+> ```

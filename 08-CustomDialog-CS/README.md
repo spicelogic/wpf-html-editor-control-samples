@@ -25,3 +25,14 @@ dotnet run --project 08-CustomDialog-CS
 ```
 
 A VB.NET version of this same sample sits alongside in `08-CustomDialog-VB`.
+
+## Building this with an AI assistant?
+
+> [!TIP]
+> Point your assistant at our MCP server and it can read the real API for this
+> control instead of guessing at member names:
+> `https://mcp.spicelogic.com/html-editor/wpf`
+>
+> ```bash
+> claude mcp add --transport http spicelogic-wpf https://mcp.spicelogic.com/html-editor/wpf
+> ```
