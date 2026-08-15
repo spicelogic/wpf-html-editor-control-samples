@@ -14,11 +14,6 @@ editor already lost focus.
   `PropertyChanged`) - every standard WPF binding mode works against `BodyHtml`.
 - `editor.UpdateBindings()`, called before reading a bound view model value on demand.
 
-**Run it**
-
-```
-dotnet run --project 02-MvvmDataBinding-CS
-```
 
 A VB.NET version of this sample sits alongside in `02-MvvmDataBinding-VB`.
 

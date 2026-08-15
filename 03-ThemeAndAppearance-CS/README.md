@@ -9,11 +9,6 @@ document font, and switch `EditorMode` between the design (WYSIWYG) and source (
 - `DefaultFontFamily`, `DefaultFontSizeInPt`
 - `EditorMode` (`EditorModes.WysiwygDesign` / `EditorModes.HtmlEdit`)
 
-**Run it**
-
-```
-dotnet run --project 03-ThemeAndAppearance-CS
-```
 
 A VB.NET version of this sample sits alongside in `03-ThemeAndAppearance-VB`.
 

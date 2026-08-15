@@ -91,16 +91,13 @@ PM> Install-Package SpiceLogic.HtmlEditor.WPF
 The sample projects reference the package as `Version="*"`, so a restore always pulls the latest
 published release and you are never evaluating an old build.
 
-## Run the samples
+## Get the samples
 
 ```bash
 git clone https://github.com/spicelogic/wpf-html-editor-control-samples.git
-cd wpf-html-editor-control-samples
-dotnet build WpfHtmlEditorSamples.sln
-dotnet run --project 01-Quickstart-CS
 ```
 
-Swap `01-Quickstart-CS` for any folder name in the table below to run a different sample.
+Open `WpfHtmlEditorSamples.sln` and start with **01-Quickstart-CS**.
 
 Prerequisites: Windows (the control hosts a Windows web control, so it does not run on macOS or
 Linux), and the .NET SDK for whichever target you build against. The control supports .NET

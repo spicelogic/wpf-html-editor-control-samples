@@ -15,11 +15,6 @@ which flags any word starting with "a" as misspelled and offers two canned sugge
   is set to `Custom`.
 - `SpellCheckOptions.CurlyUnderlineImageFilePath` - the image tiled under misspelled words.
 
-**Run it**
-
-```
-dotnet run --project 07-CustomSpellChecker-CS
-```
 
 A VB.NET version of this same sample sits alongside it in `07-CustomSpellChecker-VB`.
 

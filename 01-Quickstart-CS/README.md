@@ -9,11 +9,6 @@ code-behind, and a status bar character count driven by the `HtmlChanged` event.
 - `BodyHtml` set once at startup.
 - `HtmlChanged` event, read back through `BodyHtml` inside the handler.
 
-**Run it**
-
-```
-dotnet run --project 01-Quickstart-CS
-```
 
 A VB.NET version of this same sample sits alongside in `01-Quickstart-VB`.
 

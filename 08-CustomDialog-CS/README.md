@@ -18,11 +18,6 @@ customize further or use as a starting point for your own designs.
   `IYouTubeVideoInsertDialog` interfaces each custom dialog implements to satisfy the contract
   the editor expects.
 
-**Run it**
-
-```
-dotnet run --project 08-CustomDialog-CS
-```
 
 A VB.NET version of this same sample sits alongside in `08-CustomDialog-VB`.
 

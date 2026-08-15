@@ -20,11 +20,6 @@ app.
   overriding a handful of Polish toolbar tooltips with a `[CUSTOM]` prefix so the effect is
   obvious.
 
-**Run it**
-
-```
-dotnet run --project 06-Localization-CS
-```
 
 Pick a language from the dropdown to see the toolbar, context menu, and dialogs relocalize. Pick
 *Polish*, then check *Enable JSON override*, to see the JSON file's overrides take effect over the

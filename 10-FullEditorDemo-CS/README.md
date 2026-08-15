@@ -11,11 +11,6 @@ the box.
 - `SpellCheckOptions.SpellCheckLanguage`, `SpellCheckOptions.FireInlineSpellCheckingOnKeyStroke`,
   and `SpellCheckOptions.CurlyUnderlineImageFilePath`.
 
-**Run it**
-
-```
-dotnet run --project 10-FullEditorDemo-CS
-```
 
 A VB.NET version of this same sample sits alongside it in `10-FullEditorDemo-VB`.
 

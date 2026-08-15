@@ -15,11 +15,6 @@ properties items check themselves when the cursor sits on that content.
 - `ToolbarItemOverrider` and `TableAuthoringService` to reuse the editor's own dialogs and table
   commands from custom menu item handlers.
 
-**Run it**
-
-```
-dotnet run --project 09-CustomContextMenu-CS
-```
 
 A VB.NET version of this same sample sits alongside in `09-CustomContextMenu-VB`.
 

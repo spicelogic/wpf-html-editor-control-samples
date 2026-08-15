@@ -18,11 +18,6 @@ assemble your own from just the buttons you want, in your own order, plus a new 
 - `editor.Toolbar2Items.Add(...)` to append a custom control without touching the built-ins.
 - `editor.Content.InsertHtml(html, keepSelected: false)` to insert HTML from a custom button.
 
-**Run it**
-
-```
-dotnet run --project 04-ToolbarCustomization-CS
-```
 
 A VB.NET version of this same sample sits alongside in `04-ToolbarCustomization-VB`.
 

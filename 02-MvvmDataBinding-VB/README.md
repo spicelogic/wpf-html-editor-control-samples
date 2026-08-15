@@ -7,11 +7,6 @@ Because of a long-standing VB WPF code-generation bug (BC30149 / BC30420) with `
 classes in SDK-style projects, `App.xaml` is compiled as a `Page` rather than an
 `ApplicationDefinition`, and `App.xaml.vb` bootstraps the application from a manual `Sub Main`.
 
-**Run it**
-
-```
-dotnet run --project 02-MvvmDataBinding-VB
-```
 
 ## Building this with an AI assistant?
 
