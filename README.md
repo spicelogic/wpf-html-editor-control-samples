@@ -24,7 +24,8 @@
 > https://mcp.spicelogic.com/html-editor/wpf
 > ```
 >
-> Claude Code, Cursor, GitHub Copilot, Windsurf, and any other MCP-capable client can read the
+> Claude Code, GitHub Copilot, Cursor, OpenAI Codex, Google Antigravity, and many other
+> MCP-compatible AI coding tools can read the
 > real documentation for this control instead of guessing at member names. The server answers
 > with verified API signatures, working samples, the current NuGet package id and version, and
 > the exact licensing code, so the code it writes compiles the first time.
@@ -38,18 +39,8 @@
 > claude mcp add --transport http spicelogic-wpf https://mcp.spicelogic.com/html-editor/wpf
 > ```
 >
-> Any other client, in its MCP configuration file:
->
-> ```json
-> {
->   "mcpServers": {
->     "spicelogic-wpf": {
->       "type": "http",
->       "url": "https://mcp.spicelogic.com/html-editor/wpf"
->     }
->   }
-> }
-> ```
+> Configuration keys differ by client. For example, Google Antigravity uses `serverUrl`, while
+> Cursor uses `url`. Use the linked guide below for tested, copyable setup for each major tool.
 >
 > Tools exposed: `get_quickstart`, `get_api`, `get_sample`, `search_docs`, `get_doc_page`,
 > `get_licensing`. Full write-up:
