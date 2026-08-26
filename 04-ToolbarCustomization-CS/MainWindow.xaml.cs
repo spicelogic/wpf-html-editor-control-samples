@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -28,15 +28,17 @@ public partial class MainWindow : Window
         // it to later.
         toolbarItems.New.Visibility = Visibility.Collapsed;
 
-        // Swap a built-in button's icon. The button's Image sits three levels down its
-        // template (Border > ContentPresenter > Image); walk the visual tree to reach it.
-        if (VisualTreeHelper.GetChild(toolbarItems.Save, childIndex: 0) is Border saveBorder &&
-            VisualTreeHelper.GetChild(saveBorder, childIndex: 0) is ContentPresenter saveContent &&
-            VisualTreeHelper.GetChild(saveContent, childIndex: 0) is Image saveImage)
+        // Swap a built-in button's icon. Every built-in toolbar button is a plain WPF Button whose
+        // Content is its icon, so assigning Content replaces the icon. Do not reach into the
+        // button's template hunting for an Image: the built-in icons are vector controls, not
+        // Images, so that search finds nothing and quietly leaves the original icon in place.
+        toolbarItems.Save.Content = new Image
         {
-            saveImage.Source = new BitmapImage(new Uri(
-                "pack://application:,,,/ToolbarCustomization;component/Resources/save_accept.png", UriKind.Absolute));
-        }
+            Source = new BitmapImage(new Uri(
+                "pack://application:,,,/ToolbarCustomization;component/Resources/save_accept.png", UriKind.Absolute)),
+            Width = 16,
+            Height = 16
+        };
 
         // Override a built-in button's click behavior. Handling this event replaces the
         // built-in save-file-dialog behavior with your own logic; the built-in behavior never runs.

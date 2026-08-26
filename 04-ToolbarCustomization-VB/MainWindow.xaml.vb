@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Media
@@ -26,19 +26,16 @@ Partial Public Class MainWindow
         ' it to later.
         toolbarItems.[New].Visibility = Visibility.Collapsed
 
-        ' Swap a built-in button's icon. The button's Image sits three levels down its
-        ' template (Border > ContentPresenter > Image); walk the visual tree to reach it.
-        Dim saveBorder = TryCast(VisualTreeHelper.GetChild(toolbarItems.Save, childIndex:=0), Border)
-        If saveBorder IsNot Nothing Then
-            Dim saveContent = TryCast(VisualTreeHelper.GetChild(saveBorder, childIndex:=0), ContentPresenter)
-            If saveContent IsNot Nothing Then
-                Dim saveImage = TryCast(VisualTreeHelper.GetChild(saveContent, childIndex:=0), Image)
-                If saveImage IsNot Nothing Then
-                    saveImage.Source = New BitmapImage(New Uri(
-                        "pack://application:,,,/ToolbarCustomizationVB;component/Resources/save_accept.png", UriKind.Absolute))
-                End If
-            End If
-        End If
+        ' Swap a built-in button's icon. Every built-in toolbar button is a plain WPF Button whose
+        ' Content is its icon, so assigning Content replaces the icon. Do not reach into the
+        ' button's template hunting for an Image: the built-in icons are vector controls, not
+        ' Images, so that search finds nothing and quietly leaves the original icon in place.
+        toolbarItems.Save.Content = New Image With {
+            .Source = New BitmapImage(New Uri(
+                "pack://application:,,,/ToolbarCustomizationVB;component/Resources/save_accept.png", UriKind.Absolute)),
+            .Width = 16,
+            .Height = 16
+        }
 
         ' Override a built-in button's click behavior. Handling this event replaces the
         ' built-in save-file-dialog behavior with your own logic; the built-in behavior never runs.
