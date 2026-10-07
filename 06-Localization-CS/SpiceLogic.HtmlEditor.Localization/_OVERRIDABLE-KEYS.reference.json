@@ -445,7 +445,6 @@
   "SpellCheck_IgnoreAll": "Ignore All",
   "SpellCheck_Delete": "Delete",
   "SpellCheck_DeleteDuplicate": "Delete Duplicate",
-  "SpellCheck_CompleteAlert": "Spell Check Complete.",
   "SpellCheck_WaitAlert": "Searching next misspelled word..... (please wait)",
   "SpellCheck_NonWysiwygModeMessage": "The spell checker can be used only in WYSIWYG mode.",
   "Message_PleaseProvideUrl": "Please provide Url",
