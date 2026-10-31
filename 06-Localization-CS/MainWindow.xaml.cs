@@ -50,10 +50,9 @@ public partial class MainWindow
                         + "prefix, proving that the JSON file overrides the embedded resource "
                         + "strings.</p>";
 
-        // Inline spell-check: SpellCheckLanguage defaults to SameAsEditorLanguage, so picking
-        // Polish in the language dropdown also switches the dictionary to pl-PL.
-        Editor.SpellCheckOptions.CurlyUnderlineImageFilePath =
-            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "underline.gif");
+        // Inline spell-check, with the built-in wavy underline. SpellCheckLanguage defaults to
+        // SameAsEditorLanguage, so picking Polish in the language dropdown also switches the
+        // dictionary to pl-PL.
         Editor.SpellCheckOptions.FireInlineSpellCheckingOnKeyStroke = true;
     }
 

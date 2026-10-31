@@ -20,9 +20,6 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         // No license key set, so the editor runs in trial mode. See the licensing docs linked in the README.
-        Editor.SpellCheckOptions.CurlyUnderlineImageFilePath =
-            AppDomain.CurrentDomain.BaseDirectory + "curly_underline_for_spell_checker.gif";
-
         // HeaderStyleContent writes a <style> block into the document head, so the content
         // is styled by real CSS rather than inline formatting - exactly how you would brand
         // documents your end users author.

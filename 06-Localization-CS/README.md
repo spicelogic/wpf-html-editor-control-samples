@@ -11,9 +11,9 @@ app.
 - `Editor.SpellCheckOptions.SpellCheckLanguage` (the `SpellCheckLanguage` enum) - defaults to
   `SameAsEditorLanguage`, which keeps the spell-check dictionary in sync with `Language`; pick a
   specific language to run spell check independently of the UI language.
-- `Editor.SpellCheckOptions.CurlyUnderlineImageFilePath` and
-  `FireInlineSpellCheckingOnKeyStroke` - enable the curly-underline inline spell check shown in
-  this sample.
+- `Editor.SpellCheckOptions.FireInlineSpellCheckingOnKeyStroke` - turns on the inline spell check
+  shown in this sample; misspelled words get the editor's built-in wavy underline, with no image
+  to deploy.
 - `LocalizationManager.SetJsonOverrideDirectory(path)` - points the editor at a folder of
   `EditorStrings.<culture>.json` files whose entries override the built-in localized strings for
   that culture. This sample ships `SpiceLogic.HtmlEditor.Localization\EditorStrings.pl-PL.json`,

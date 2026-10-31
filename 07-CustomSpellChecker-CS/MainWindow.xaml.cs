@@ -17,6 +17,8 @@ public partial class MainWindow : Window
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
         // No license key set, so the editor runs in trial mode. See the licensing docs linked in the README.
+        // Optional: misspelled words already get the built-in wavy underline. Set the full path of an
+        // image only to draw your own underline instead.
         Editor.SpellCheckOptions.CurlyUnderlineImageFilePath =
             AppDomain.CurrentDomain.BaseDirectory + "underline.gif";
 

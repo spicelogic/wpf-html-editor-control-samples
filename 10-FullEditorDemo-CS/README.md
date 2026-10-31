@@ -8,8 +8,8 @@ the box.
 **Key API used**
 
 - `BodyHtml` set once at startup; read back through `HtmlChanged`.
-- `SpellCheckOptions.SpellCheckLanguage`, `SpellCheckOptions.FireInlineSpellCheckingOnKeyStroke`,
-  and `SpellCheckOptions.CurlyUnderlineImageFilePath`.
+- `SpellCheckOptions.SpellCheckLanguage` and `SpellCheckOptions.FireInlineSpellCheckingOnKeyStroke`
+  (misspelled words get the built-in wavy underline).
 
 
 A VB.NET version of this same sample sits alongside it in `10-FullEditorDemo-VB`.

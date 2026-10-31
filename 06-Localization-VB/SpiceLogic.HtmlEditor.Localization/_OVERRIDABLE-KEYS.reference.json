@@ -449,7 +449,6 @@
   "SpellCheck_NonWysiwygModeMessage": "The spell checker can be used only in WYSIWYG mode.",
   "Message_PleaseProvideUrl": "Please provide Url",
   "Message_PleaseProvideImageUrl": "Please provide Image Url",
-  "Message_InvalidHyperlink": "Requested hyperlink cannot be opened. Probably it is not valid",
   "Message_YouTubeUrlEmpty": "The YouTube URL cannot be empty.",
   "Message_InvalidYouTubeURL": "The URL you provided does not contain the YouTube Domain name",
   "Message_InvalidURL": "Invalid URL",
@@ -575,5 +574,9 @@
   "Dialog_FontPicker_AddFallback": "Add fallback",
   "Dialog_FontPicker_AddCustom": "Add custom font",
   "Dialog_StyleBuilder_RemoveDocumentStyle": "Remove document style",
-  "Dialog_StyleBuilder_ApplyStyle": "Apply style"
+  "Dialog_StyleBuilder_ApplyStyle": "Apply style",
+  "Status_Ready": "Ready",
+  "Status_ReadOnly": "Read-only",
+  "Status_HtmlSource": "HTML source",
+  "Status_CharacterCount": "{0} characters"
 }

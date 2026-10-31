@@ -13,7 +13,8 @@ which flags any word starting with "a" as misspelled and offers two canned sugge
   and `SpellCheckerEngineTypes.Custom`.
 - `SpellCheckOptions.CustomSpellCheckerEngine` - the custom engine instance used when `SpellChecker`
   is set to `Custom`.
-- `SpellCheckOptions.CurlyUnderlineImageFilePath` - the image tiled under misspelled words.
+- `SpellCheckOptions.CurlyUnderlineImageFilePath` - optional: replaces the built-in wavy underline
+  with your own image (a full path).
 
 
 A VB.NET version of this same sample sits alongside it in `07-CustomSpellChecker-VB`.

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Net;
+using System.Text.RegularExpressions;
 using System.Windows;
 using SpiceLogic.HtmlEditor.Abstractions.Entities.MailMerge;
 
@@ -16,6 +18,13 @@ public partial class MainWindow : Window
         ["{{InvoiceNumber}}"] = "INV-1042",
         ["{{DueDate}}"] = "September 1, 2026"
     };
+
+    // An inserted field is a protected span, <span class="sl-placeholder" ...>{{FirstName}}</span>.
+    // Replace the whole span rather than only its token, so the merged text does not keep the
+    // field's blue editing style. Tokens typed as plain text are replaced afterwards.
+    private static readonly Regex PlaceholderSpan = new(
+        @"<span\b[^>]*\bclass\s*=\s*[""']?sl-placeholder[""']?[^>]*>(.*?)</span>",
+        RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
     public MainWindow()
     {
@@ -45,10 +54,13 @@ public partial class MainWindow : Window
         // reading it - otherwise the most recent typing is not there yet.
         Editor.UpdateBindings();
 
-        string merged = Editor.BodyHtml;
+        string merged = PlaceholderSpan.Replace(Editor.BodyHtml, match =>
+            SampleRecord.TryGetValue(WebUtility.HtmlDecode(match.Groups[1].Value), out string? value)
+                ? WebUtility.HtmlEncode(value)
+                : match.Groups[1].Value);
         foreach (KeyValuePair<string, string> pair in SampleRecord)
         {
-            merged = merged.Replace(pair.Key, pair.Value);
+            merged = merged.Replace(pair.Key, WebUtility.HtmlEncode(pair.Value));
         }
 
         PreviewEditor.BodyHtml = merged;
