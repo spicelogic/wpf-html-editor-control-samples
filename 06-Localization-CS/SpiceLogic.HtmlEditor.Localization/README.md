@@ -20,7 +20,7 @@ other string keeps its built-in translation.
 ## Step by step
 
 1. **Find the key.** Open [`_OVERRIDABLE-KEYS.reference.json`](_OVERRIDABLE-KEYS.reference.json)
-   in this folder. It lists **every** overridable key (496 of them) with its
+   in this folder. It lists **every** overridable key with its
    default English text - e.g. `"Toolbar_Bold": "Bold"`,
    `"Dialog_Hyperlink_Title": "..."`. Search it for the wording you see in
    the UI to discover the key.
@@ -70,7 +70,7 @@ other string keeps its built-in translation.
 1. Run the sample.
 2. Pick **Polish** in the *Editor Language* dropdown - the UI switches to Polish.
 3. Tick **Enable JSON Override**. Toolbar tooltips for Bold / Italic /
-   Underline / Cut / Copy / Paste / Undo / Redo now show a `[CUSTOM]`
+   Underline / Cut / Copy / Paste / Undo / Redo now show a custom
    prefix, proving `EditorStrings.pl-PL.json` overrode the embedded
    Polish RESX strings.
 4. Untick it to fall back to the built-in Polish translation.
