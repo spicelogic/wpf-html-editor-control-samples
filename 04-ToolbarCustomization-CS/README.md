@@ -10,7 +10,7 @@ assemble your own from just the buttons you want, in your own order, plus a new 
 **Key API used**
 
 - `editor.ToolbarItemOverrider.ToolbarItems.<Name>` to reach a specific built-in button
-  (`.Visibility`, `.ToolTip`, or its icon via the visual tree).
+  (`.Visibility`, `.ToolTip`, or its icon through `.Content`).
 - `editor.ToolbarItemOverrider.SaveButtonClicked` (and the matching event for every other
   built-in button) to override a button's default behavior.
 - `editor.Toolbar1` / `editor.Toolbar2` (`.Visibility`, `.ToolBar.Items`) to hide the built-in

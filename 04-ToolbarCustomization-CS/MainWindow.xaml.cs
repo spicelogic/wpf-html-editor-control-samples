@@ -35,7 +35,7 @@ public partial class MainWindow : Window
         toolbarItems.Save.Content = new Image
         {
             Source = new BitmapImage(new Uri(
-                "pack://application:,,,/ToolbarCustomization;component/Resources/save_accept.png", UriKind.Absolute)),
+                "pack://application:,,,/04-ToolbarCustomization-CS;component/Resources/save_accept.png", UriKind.Absolute)),
             Width = 16,
             Height = 16
         };
@@ -118,7 +118,7 @@ public partial class MainWindow : Window
             Content = new Image
             {
                 Source = new BitmapImage(new Uri(
-                    "pack://application:,,,/ToolbarCustomization;component/Resources/save_accept.png", UriKind.Absolute))
+                    "pack://application:,,,/04-ToolbarCustomization-CS;component/Resources/save_accept.png", UriKind.Absolute))
             }
         };
         timestampButton.Click += (_, _) =>

@@ -32,7 +32,7 @@ Partial Public Class MainWindow
         ' Images, so that search finds nothing and quietly leaves the original icon in place.
         toolbarItems.Save.Content = New Image With {
             .Source = New BitmapImage(New Uri(
-                "pack://application:,,,/ToolbarCustomizationVB;component/Resources/save_accept.png", UriKind.Absolute)),
+                "pack://application:,,,/04-ToolbarCustomization-VB;component/Resources/save_accept.png", UriKind.Absolute)),
             .Width = 16,
             .Height = 16
         }
@@ -114,7 +114,7 @@ Partial Public Class MainWindow
             .ToolTip = "Insert timestamp",
             .Content = New Image With {
                 .Source = New BitmapImage(New Uri(
-                    "pack://application:,,,/ToolbarCustomizationVB;component/Resources/save_accept.png", UriKind.Absolute))
+                    "pack://application:,,,/04-ToolbarCustomization-VB;component/Resources/save_accept.png", UriKind.Absolute))
             }
         }
         AddHandler timestampButton.Click,
