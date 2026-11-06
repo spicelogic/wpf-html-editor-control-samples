@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="SpiceLogic.HtmlEditor.WPF" Version="*" />
+		<Resource Include="Resources\*.png;Resources\*.gif" />
 	</ItemGroup>
 
 </Project>
