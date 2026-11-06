@@ -1,86 +1,89 @@
-# Customizing / overriding HTML Editor UI text (JSON override)
+# Customize the editor interface
 
-Every visible string in the HTML Editor - toolbar tooltips, dialog
-titles and labels, context-menu items, status messages - can be
-overridden **without recompiling the control**, by dropping a small
-JSON file next to your application.
+## Choose a built-in translation
 
-## How it works
+Set the editor's `Language` to one of the fourteen built-in values. No JSON is
+needed. Toolbar tooltips, dialogs and context menus follow that language.
 
-`LocalizationManager` resolves each UI string in this order:
+## Change selected wording
 
-1. **JSON override** for the active culture (this folder) - if present
-2. The embedded **RESX** resource for the active culture
-3. The embedded **RESX** resource for English (invariant fallback)
-4. The resource key itself (last resort)
+Find the key in `_OVERRIDABLE-KEYS.reference.json`. Copy only the keys to change
+into `EditorStrings.<culture>.json`, matching the selected built-in language,
+for example `EditorStrings.pl-PL.json` for Polish. Other keys keep their built-in
+translation. The reference catalog is documentation and is never loaded at runtime.
 
-So a JSON file only needs the *handful of keys you want to change* - every
-other string keeps its built-in translation.
+## Supply a new interface language
 
-## Step by step
+Select `EditorLanguage.Custom`. Its file is **`EditorStrings.custom.json`**,
+not an English override and not an arbitrary culture filename. This sample's
+custom file contains two Turkish labels to demonstrate selection; untranslated
+keys fall back to neutral English. A complete translation supplies every key.
 
-1. **Find the key.** Open [`_OVERRIDABLE-KEYS.reference.json`](_OVERRIDABLE-KEYS.reference.json)
-   in this folder. It lists **every** overridable key with its
-   default English text - e.g. `"Toolbar_Bold": "Bold"`,
-   `"Dialog_Hyperlink_Title": "..."`. Search it for the wording you see in
-   the UI to discover the key.
+Your coding assistant can prepare that complete translation. Connect the
+edition's documentation MCP server, then ask it to translate every **value** in
+the reference catalog into your target language, preserve every key and format
+placeholder such as `{0}`, write `EditorStrings.custom.json`, configure output
+copying, load the folder before editor construction and select `Custom`.
+Review the generated JSON, tweak wording and check the resulting tooltips and
+dialogs. Machine translation still needs a fluent review before shipping.
 
-2. **Create / edit the culture file.** In this folder create a file named:
+## Put the file in the project and deploy it
 
-   ```
-   EditorStrings.<culture>.json
-   ```
-
-   where `<culture>` is the .NET culture code of the editor language you
-   want to customize - `en-US`, `de-DE`, `fr-FR`, `pl-PL`, etc. (The culture
-   code for each `EditorLanguage` is shown in the dropdown / enum.)
-   Example: [`EditorStrings.pl-PL.json`](EditorStrings.pl-PL.json) in this
-   folder customizes Polish.
-
-3. **Add only the keys you want to change**, copied from the reference file:
-
-   ```json
-   {
-     "Toolbar_Bold": "Make Bold",
-     "Toolbar_Italic": "Make Italic",
-     "Dialog_Hyperlink_Title": "Insert Web Link"
-   }
-   ```
-
-4. **Point the editor at this folder** once at startup. The sample uses the
-   "Enable JSON Override" checkbox, which calls:
+1. Create a `SpiceLogic.HtmlEditor.Localization` folder in your application project.
+2. Add your `EditorStrings.<culture>.json` or `EditorStrings.custom.json` inside it.
+3. Select the JSON in **Solution Explorer**. In **Properties**, set **Build Action**
+   to **Content**, and **Copy to Output Directory** to **Copy if newer**.
+4. Load the folder once at startup, **before constructing the editor**:
 
    ```csharp
    LocalizationManager.SetJsonOverrideDirectory(
        Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "SpiceLogic.HtmlEditor.Localization"));
+           "SpiceLogic.HtmlEditor.Localization"));
+   // Construct the form/window containing the editor after this call.
    ```
 
-   Or call `LocalizationManager.AutoDiscoverJsonOverrides()` - it
-   automatically loads a `SpiceLogic.HtmlEditor.Localization` subfolder
-   from your app's base directory. (You can also set a single string
-   programmatically with `LocalizationManager.SetOverride(culture, key, value)`.)
+   ```vb
+   LocalizationManager.SetJsonOverrideDirectory(
+       Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+           "SpiceLogic.HtmlEditor.Localization"))
+   ' Construct the form/window containing the editor after this call.
+   ```
 
-5. **Ship the file.** Make sure your `EditorStrings.<culture>.json` is set
-   to **Copy to Output Directory** so it lands next to your `.exe`. The
-   reference file does **not** need to be copied - it is documentation only.
+   `LocalizationManager` and `EditorLanguage` are in
+   `SpiceLogic.HtmlEditor.Resources.Localization`; `Path` is in `System.IO`.
+   `AutoDiscoverJsonOverrides()` loads the same folder from the application's
+   base directory when called at startup. It is an explicit alternative to the
+   directory call, not automatic behavior triggered merely by selecting Custom.
+5. Build and open the output folder. The deployed layout is:
 
-## Trying it in this sample
+   ```text
+   Application folder/
+     YourApplication.exe
+     SpiceLogic.HtmlEditor.Localization/
+       EditorStrings.custom.json
+   ```
 
-1. Run the sample.
-2. Pick **Polish** in the *Editor Language* dropdown - the UI switches to Polish.
-3. Tick **Enable JSON Override**. Toolbar tooltips for Bold / Italic /
-   Underline / Cut / Copy / Paste / Undo / Redo now show a custom
-   prefix, proving `EditorStrings.pl-PL.json` overrode the embedded
-   Polish RESX strings.
-4. Untick it to fall back to the built-in Polish translation.
+   On modern .NET, this folder is under `bin/Debug/<target-framework>/` when
+   running a Debug build. Ship the JSON folder beside the executable as well.
 
-## Notes
+For a custom translation, set the constructed editor's `Language` to
+`EditorLanguage.Custom` in code, or `Language="Custom"` in WPF/Avalonia XAML.
+For a built-in override, keep its corresponding language selected instead.
+The samples' override checkbox demonstrates reloading at runtime; the startup
+sequence above is the simpler pattern for a normal application.
 
-- Files are matched by the pattern `EditorStrings.*.json`. The reference
-  file is deliberately named `_OVERRIDABLE-KEYS.reference.json` so it is
-  **not** picked up as a culture override - it is just a catalog you copy from.
-- The JSON parser is intentionally minimal: a **flat** object of
-  `"key": "value"` string pairs. No nested objects, no comments, no arrays.
-  Escapes supported: `\" \\ \n \r \t`.
-- Keys are case-insensitive.
+## Behavior and limits
+
+- A flat object of string key/value pairs is supported. Keep resource keys and
+  format placeholders unchanged. Do not add comments, nested objects or arrays.
+- Custom reads only the custom file. Built-in culture files may coexist in the
+  same folder. Missing custom keys use neutral English resources, unaffected by
+  any English JSON override; a missing or unreadable file uses the same fallback.
+- `SetOverride("custom", key, value)` sets a custom string in code.
+  `ClearOverrides()` reloads the configured files. Load before constructing the
+  UI, or reapply its language when changing files in a running application.
+- The configured directory and override cache are process-wide. To change the
+  active custom translation, load a different directory and refresh the UI.
+- Custom is an interface text option, with invariant formatting, not a new .NET
+  culture or a bundled spelling dictionary. The default spelling fallback is US
+  English; choose an explicit spelling language or configure your own dictionary.

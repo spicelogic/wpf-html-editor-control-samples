@@ -1,10 +1,10 @@
 {
-  "Toolbar_Bold": "[CUSTOM] Pogrubienie",
-  "Toolbar_Italic": "[CUSTOM] Kursywa",
-  "Toolbar_Underline": "[CUSTOM] Podkreslenie",
-  "Toolbar_Undo": "[CUSTOM] Cofnij",
-  "Toolbar_Redo": "[CUSTOM] Ponow",
-  "Toolbar_Cut": "[CUSTOM] Wytnij",
-  "Toolbar_Copy": "[CUSTOM] Kopiuj",
-  "Toolbar_Paste": "[CUSTOM] Wklej"
+  "Toolbar_Bold": "[Custom] Pogrubienie",
+  "Toolbar_Italic": "[Custom] Kursywa",
+  "Toolbar_Underline": "[Custom] Podkreslenie",
+  "Toolbar_Undo": "[Custom] Cofnij",
+  "Toolbar_Redo": "[Custom] Ponow",
+  "Toolbar_Cut": "[Custom] Wytnij",
+  "Toolbar_Copy": "[Custom] Kopiuj",
+  "Toolbar_Paste": "[Custom] Wklej"
 }

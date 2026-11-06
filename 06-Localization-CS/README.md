@@ -17,7 +17,7 @@ app.
 - `LocalizationManager.SetJsonOverrideDirectory(path)` - points the editor at a folder of
   `EditorStrings.<culture>.json` files whose entries override the built-in localized strings for
   that culture. This sample ships `SpiceLogic.HtmlEditor.Localization\EditorStrings.pl-PL.json`,
-  overriding a handful of Polish toolbar tooltips with a `[CUSTOM]` prefix so the effect is
+  overriding a handful of Polish toolbar tooltips with a `[Custom]` prefix so the effect is
   obvious.
 
 
@@ -38,3 +38,15 @@ A VB.NET version of this same sample sits alongside it in
 > ```bash
 > claude mcp add --transport http spicelogic-wpf https://mcp.spicelogic.com/html-editor/wpf
 > ```
+
+## A custom interface language
+
+Select `Custom` and load `SpiceLogic.HtmlEditor.Localization` to use
+`EditorStrings.custom.json`. WinForms and WPF expose the JSON override checkbox;
+Avalonia loads the folder at startup and provides a Custom interface button.
+The supplied file demonstrates two Turkish labels. Remaining labels fall back
+to neutral English. For a complete language, ask your coding assistant to translate
+every value in `_OVERRIDABLE-KEYS.reference.json`, preserving the keys and format
+placeholders, and save the result as `EditorStrings.custom.json`. Review the
+translation and test the actual dialogs before shipping. Custom does not supply
+a spelling dictionary or infer a .NET culture; configure spelling separately.

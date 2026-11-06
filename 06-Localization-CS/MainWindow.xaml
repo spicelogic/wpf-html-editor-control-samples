@@ -17,7 +17,7 @@
                        FontSize="14" Margin="20,0,10,0" />
             <ComboBox x:Name="SpellCheckCombo" Width="200" FontSize="14"
                       SelectionChanged="SpellCheckCombo_SelectionChanged" />
-            <CheckBox x:Name="JsonOverrideCheckBox" Content="Enable JSON override (Polish)"
+            <CheckBox x:Name="JsonOverrideCheckBox" Content="Enable JSON overrides"
                       VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"
                       Checked="JsonOverrideCheckBox_Changed" Unchecked="JsonOverrideCheckBox_Changed" />
         </StackPanel>

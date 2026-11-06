@@ -502,7 +502,7 @@
   "MailMerge_Insert": "Insert",
   "Trial_PurchaseDeveloperLicense": "Purchase Developer License",
   "Trial_Version": "(Trial version)",
-  "Trial_VersionDaysLeft": "(Trial version, {0} days left)",
+  "Trial_VersionDaysLeft": "(Trial version, days remaining: {0})",
   "Trial_Expired": "(Trial expired)",
   "Message_ErrorSavingFile": "Error saving file.",
   "Message_ErrorOpeningFile": "Error opening file.",

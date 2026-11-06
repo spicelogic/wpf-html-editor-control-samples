@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="SpiceLogic.HtmlEditor.Localization\**\*.json">
+    <Content Include="SpiceLogic.HtmlEditor.Localization\EditorStrings.*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
 
 </Project>

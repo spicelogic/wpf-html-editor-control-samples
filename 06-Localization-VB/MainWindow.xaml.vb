@@ -43,9 +43,12 @@ Partial Public Class MainWindow
                         & "<hr/>" _
                         & "<p><b>JSON override demo:</b> select <i>Polish</i> from the language " _
                         & "dropdown, then check <i>Enable JSON override</i>. Toolbar tooltips like " _
-                        & "bold, italic, and underline change to show a <code>[CUSTOM]</code> " _
+                        & "bold, italic, and underline change to show a <code>[Custom]</code> " _
                         & "prefix, proving that the JSON file overrides the embedded resource " _
-                        & "strings.</p>"
+                        & "strings.</p>" _
+            & "<p><b>Custom language demo:</b> select <i>Custom</i> with JSON overrides enabled. " _
+            & "The supplied EditorStrings.custom.json demonstrates two Turkish strings. " _
+            & "Other strings fall back to English. Supply a complete translation for a complete interface.</p>"
 
         ' Inline spell-check, with the built-in wavy underline. SpellCheckLanguage defaults to
         ' SameAsEditorLanguage, so picking Polish in the language dropdown also switches the
